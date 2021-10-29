@@ -1,17 +1,28 @@
 import random
+from ability import Ability
+from armor import Armor
+
 
 heroes = []
 
 class Hero:
   #set parameters of hero
   def __init__(self, name, starting_health=100):
+    #hero properties
     self.name = name
     self.starting_health = starting_health
     self.current_health = starting_health
+
+    #store abilities and defenses of hero
+    self.abilities = []
+    self.armor = []
     
     #add to list of heroes that can be accessed globally
     heroes.append(self)
   
+  def add_ability(self, ability):
+    self.abilities.append(ability)
+
   def fight(self, opponent):
     #store fighters in a list then make a weighted choice based upon available stats
     fighters = [opponent, self]
@@ -31,7 +42,7 @@ class Hero:
 
     #call fight method
     self.fight(opponent)
-    
+
 #initialized  heroes    
 hero_1 = Hero("Flash")
 hero_2 = Hero("Iron Man")

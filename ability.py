@@ -6,5 +6,5 @@ class Ability:
     self.max_damage = max_damage
   
   def attack(self):
-    damage = random.randint(self.max_damage/5, self.max_damage)
+    damage = random.randint(0, self.max_damage)
     return damage

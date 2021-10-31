@@ -1,7 +1,7 @@
 import random
 from ability import Ability
 from armor import Armor
-
+from weapon import Weapon
 
 heroes = []
 
@@ -22,6 +22,9 @@ class Hero:
   
   def add_ability(self, ability):
     self.abilities.append(ability)
+
+  def add_weapon(self, weapon):
+    self.abilities.append(weapon)
 
   def attack(self):
     damage_output = 0

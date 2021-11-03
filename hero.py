@@ -12,6 +12,8 @@ class Hero:
     self.name = name
     self.starting_health = starting_health
     self.current_health = starting_health
+    self.deaths = 0
+    self.kills = 0
 
     #store abilities and defenses of hero
     self.abilities = []
@@ -52,10 +54,18 @@ class Hero:
       self.alive = self.is_alive()
       opponent.alive = opponent.is_alive()
     if self.alive == False and opponent.alive == False:
-      return print(f"In a duel between {self.name} and {opponent.name}...\nThe result was a stalemate!")
+      self.add_kill(1)
+      opponent.add_death(1)
+      self.add_death(1)
+      opponent.add_kill(1)
+      return print(f"In a duel between {self.name} and {opponent.name}...\nBoth have perished!")
     elif self.alive == True:
+      self.add_kill(1)
+      opponent.add_death(1)
       return print(f"In a duel between {self.name} and {opponent.name}...\nThe Victor!\nIs!\n{self.name}")
     elif opponent.alive == True:
+      self.add_death(1)
+      opponent.add_kill(1)
       return print(f"In a duel between {self.name} and {opponent.name}...\nThe Victor!\nIs!\n{opponent.name}")
     else:
       return print("error")
@@ -80,7 +90,12 @@ class Hero:
       return True
     else:
       return False
+  
+  def add_kill(self, num_kills):
+    self.kills += num_kills
 
+  def add_death(self, num_deaths):
+    self.deaths += num_deaths
 
 #initialized  heroes    
 hero_1 = Hero("Flash")

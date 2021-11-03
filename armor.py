@@ -9,3 +9,4 @@ class Armor:
     block = random.randint(0, self.max_block)
     return block
   
+  pass

@@ -2,5 +2,9 @@ import random
 from ability import Ability
 
 class Weapon(Ability):
+
   def attack(self):
-      random.randint(self.max_damage//2, self.max_damage)
+    damage = random.randint(self.max_damage//2, self.max_damage)
+    return damage
+
+  pass

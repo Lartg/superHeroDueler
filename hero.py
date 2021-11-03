@@ -96,3 +96,5 @@ class Hero:
 
   def add_death(self, num_deaths):
     self.deaths += num_deaths
+  
+  pass

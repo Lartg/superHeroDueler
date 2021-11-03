@@ -34,6 +34,8 @@ class Arena:
         hero.abilities.append(Weapon(self.create_ability()))
       elif add_item == "3":
         hero.armor.append(self.create_armor())
+      elif add_item == "4":
+        add_item = 4
     return hero
   
   def build_team_one(self):
@@ -43,7 +45,7 @@ class Arena:
       self.team_one.add_hero(hero)
 
   def build_team_two(self):
-    numOfTeamMembers = int(input("How many members would you like on Team One?\n"))
+    numOfTeamMembers = int(input("How many members would you like on Team Two?\n"))
     for i in range(numOfTeamMembers):
       hero = self.create_hero()
       self.team_two.add_hero(hero)
@@ -77,36 +79,5 @@ class Arena:
     if team_deaths == 0:
         team_deaths = 1
     print(self.team_two.name + " average K/D was: " + str(team_kills/team_deaths))
-
-
-if __name__ == "__main__":
-  arena = Arena()
-  arena.build_team_one()
-  arena.build_team_two()
-  arena.team_battle()
-  arena.show_stats()
-
-# if __name__ == "__main__":
-#     game_is_running = True
-
-#     # Instantiate Game Arena
-#     arena = Arena()
-
-#     #Build Teams
-#     arena.build_team_one()
-#     arena.build_team_two()
-
-#     while game_is_running:
-
-#         arena.team_battle()
-#         arena.show_stats()
-#         play_again = input("Play Again? Y or N: ")
-
-#         #Check for Player Input
-#         if play_again.lower() == "n":
-#             game_is_running = False
-
-#         else:
-#             #Revive heroes to play again
-#             arena.team_one.revive_heroes()
-#             arena.team_two.revive_heroes()
+  
+  pass

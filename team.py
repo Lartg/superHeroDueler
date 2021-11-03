@@ -25,7 +25,10 @@ class Team:
   
   def stats(self):
     for hero in self.heroes:
-      kd = hero.kills / hero.deaths
+      deaths = hero.deaths
+      if deaths == 0:
+        deaths = 1
+      kd = hero.kills / deaths
       print(f"{hero.name} KD:{kd}")
   
   def revive_heroes(self):
@@ -52,3 +55,5 @@ class Team:
         living_heroes.remove(hero)
       if opponent.is_alive() == False:
         living_opponents.remove(opponent)
+  
+  pass

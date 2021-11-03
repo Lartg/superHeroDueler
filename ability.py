@@ -8,3 +8,5 @@ class Ability:
   def attack(self):
     damage = random.randint(0, self.max_damage)
     return damage
+   
+  pass

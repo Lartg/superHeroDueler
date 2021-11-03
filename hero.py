@@ -96,13 +96,3 @@ class Hero:
 
   def add_death(self, num_deaths):
     self.deaths += num_deaths
-
-#initialized  heroes    
-hero_1 = Hero("Flash")
-hero_2 = Hero("Iron Man")
-hero_3 = Hero("Spider-man")
-hero_4 = Hero("Goku")
-hero_5 = Hero("Green Lanturn")
-
-hero_1.fight(hero_2)
-hero_1.fight_random_opponent()

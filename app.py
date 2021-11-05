@@ -8,7 +8,7 @@ if __name__ == "__main__":
   arena.build_team_one()
   arena.build_team_two()
   while game_is_running:
-    # arena.team_battle()
+    arena.team_battle()
     arena.show_stats()
     play_again = input("Play Again? Y or N: ")
     #Check for Player Input

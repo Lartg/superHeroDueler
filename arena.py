@@ -11,17 +11,17 @@ class Arena:
   
   def create_ability(self):
     name = input("Ability name:  ")
-    max_damage = input("Max damage:  ")
+    max_damage = int(input("Max damage:  "))
     return Ability(name, max_damage)
   
   def create_armor(self):
     name = input("Armor name:  ")
-    max_block = input("Max block:  ")
+    max_block = int(input("Max block:  "))
     return Armor(name, max_block)
   
   def create_hero(self):
     name = input("Hero name:  ")
-    health = input("Hero health (enter a number):  ")
+    health = int(input("Hero health (enter a number):  "))
     
     hero = Hero(name, health)
 
